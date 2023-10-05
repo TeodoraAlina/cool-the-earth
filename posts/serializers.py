@@ -31,5 +31,5 @@ class PostSerializer(serializers.ModelSerializer):
             'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_at', 'updated_at',
             'title', 'description', 'image', 'location',
-            'tags', 'enviromental_metrics'
+            'tags', 'environmental_metrics'
         ]
