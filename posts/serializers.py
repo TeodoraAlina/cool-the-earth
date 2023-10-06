@@ -1,11 +1,13 @@
 from rest_framework import serializers
 from posts.models import Post
+from taggit.serializers import (TagListSerializerField, TaggitSerializer)
 
 
 class PostSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
+    tags = TagListSerializerField()
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
 
     def validate_image(self, value):
