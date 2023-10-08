@@ -14,6 +14,20 @@ class EventSerializer(TaggitSerializer, serializers.ModelSerializer):
     profile_image = serializers.ReadOnlyField(source='owner.profile.profile_picture.url')
     going = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
     not_going = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    is_going = serializers.BooleanField(write_only=True, required=False)
+
+    def update(self, instance, validated_data):
+        is_going = validated_data.pop("is_going", None)
+        if is_going is not None:
+            user = self.context['request'].user
+            if is_going:
+                instance.going.add(user)
+                instance.not_going.remove(user)
+            else:
+                instance.not_going.add(user)
+                instance.going.remove(user)
+
+        return super().update(instance, validated_data)
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
