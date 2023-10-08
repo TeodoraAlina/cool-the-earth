@@ -1,6 +1,7 @@
 from django.db.models import Count
 from rest_framework import generics, permissions, filters
 from drf_api.permissions import IsOwnerOrReadOnly
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Event
 from .serializers import EventSerializer
 
@@ -15,9 +16,11 @@ class EventList(generics.ListCreateAPIView):
     queryset = Event.objects.annotate(
         going_count=Count('going', distinct=True)
     )
+    
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
+        DjangoFilterBackend,
     ]
 
     filterset_fields = {
