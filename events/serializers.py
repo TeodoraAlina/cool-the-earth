@@ -17,7 +17,7 @@ class EventSerializer(TaggitSerializer, serializers.ModelSerializer):
     is_going = serializers.BooleanField(write_only=True, required=False)
 
     def update(self, instance, validated_data):
-        is_going = validated_data.pop("is_going", None)
+        is_going = validated_data.pop('is_going', None)
         if is_going is not None:
             user = self.context['request'].user
             if is_going:

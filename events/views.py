@@ -15,10 +15,28 @@ class EventList(generics.ListCreateAPIView):
     queryset = Event.objects.annotate(
         going_count=Count('going', distinct=True)
     )
-    filter_backends = [filters.OrderingFilter]
+    filter_backends = [
+        filters.OrderingFilter,
+        filters.SearchFilter,
+    ]
+
+    filterset_fields = {
+        'owner__followed__owner__profile': ['exact'],
+        'owner__profile': ['exact'],
+        'category': ['exact'],
+        'event_date': ['lte'],
+    }
+
+    search_fields = [
+        'owner__username',
+        'title',
+        'event_date',
+        'tags__name',
+    ]
+
     ordering_fields = [
         'going_count'
-     ]
+    ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
