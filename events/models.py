@@ -35,6 +35,11 @@ class Event(models.Model):
     image = models.ImageField(
         upload_to='images/', default='../default_post_npnwpm', blank=True
     )
+    going = models.ManyToManyField(User,
+        related_name='events_going', blank=True)
+    not_going = models.ManyToManyField(User,
+        related_name='events_not_going', blank=True)
+
 
     class Meta:
         """

@@ -12,6 +12,8 @@ class EventSerializer(TaggitSerializer, serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     tags = TagListSerializerField()
     profile_image = serializers.ReadOnlyField(source='owner.profile.profile_picture.url')
+    going = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
+    not_going = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -39,9 +41,23 @@ class EventSerializer(TaggitSerializer, serializers.ModelSerializer):
         """
         model = Event
         fields = [
-            'id', 'owner', 'is_owner', 'profile_id',
-            'profile_image', 'created_at', 'updated_at',
-            'title', 'description', 'event_date',
-            'event_time', 'city', 'country',
-            'tags', 'category', 'image'
+            'id',
+            'owner', 
+            'is_owner', 
+            'profile_id',
+            'profile_image', 
+            'created_at', 
+            'updated_at',
+            'title', 
+            'description', 
+            'event_date',
+            'event_time', 
+            'city', 
+            'country',
+            'tags', 
+            'category', 
+            'image',
+            'going',
+            'not_going',
+            'is_going',
         ]
