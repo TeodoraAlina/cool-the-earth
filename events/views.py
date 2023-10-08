@@ -12,7 +12,13 @@ class EventList(generics.ListCreateAPIView):
     """
     serializer_class = EventSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Event.objects.all()
+    queryset = Event.objects.annotate(
+        going_count=Count('going', distinct=True)
+    )
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = [
+        'going_count'
+     ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -24,4 +30,6 @@ class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     serializer_class = EventSerializer
     permission_classes = [IsOwnerOrReadOnly]
-    queryset = Event.objects.all()
+    queryset = Event.objects.annotate(
+        going_count=Count("going", distinct=True)
+    )
