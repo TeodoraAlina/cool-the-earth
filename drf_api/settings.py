@@ -39,7 +39,7 @@ DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    'localhost'
+    '8000-teodoraalin-cooltheeart-9jiqtofeupn.ws-eu105.gitpod.io'
 ]
 
 
@@ -103,7 +103,7 @@ REST_AUTH_SERIALIZERS = {
 
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware'
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -113,7 +113,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ORIGINS = [
+CORS_ALLOWED_ORIGINS = [
     os.environ.get('CLIENT_ORIGIN')
 ]
 
