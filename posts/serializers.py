@@ -11,6 +11,8 @@ class PostSerializer(serializers.ModelSerializer):
     tags = TagListSerializerField()
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     like_id = serializers.SerializerMethodField()
+    likes_count = serializers.ReadOnlyField()
+    comments_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -55,4 +57,6 @@ class PostSerializer(serializers.ModelSerializer):
             'tags', 
             'environmental_metrics',
             'like_id',
+            'likes_count',
+            'comments_count',
         ]
