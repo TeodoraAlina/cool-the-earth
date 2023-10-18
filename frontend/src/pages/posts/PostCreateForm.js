@@ -46,12 +46,12 @@ function PostCreateForm() {
     event.preventDefault();
     const formData = new FormData();
     
-    formData.append("title", title)
+    formData.append("title", title);
     formData.append("description", description);
-    formData.append('tags', tags)
-    formData.append('location', location)
+    formData.append('tags', tags);
+    formData.append('location', location);
     formData.append("image", imageInput.current.files[0]);
-    formData.append('environmental_metrics', environmental_metrics)
+    formData.append('environmental_metrics', environmental_metrics);
 
     try {
         const { data } = await axiosReq.post("/posts/", formData);
@@ -85,7 +85,7 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.content?.map((message, idx) => (
+      {errors?.title?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -100,7 +100,7 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.content?.map((message, idx) => (
+      {errors?.description?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -128,7 +128,7 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.tags?.map((message, idx) => (
+      {errors?.location?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
@@ -142,7 +142,7 @@ function PostCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-      {errors?.tags?.map((message, idx) => (
+      {errors?.environmental_metrics?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
