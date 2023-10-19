@@ -60,9 +60,8 @@ const Post = (props) => {
       console.log(err);
     }
   };
-  console.log('likes_count:', likes_count);
-  console.log('post data:', props); // Log the entire post data for further debugging.
 
+  
   return (
     <Card className={styles.Post}>
       <Card.Body>
