@@ -14,8 +14,8 @@ class EventList(generics.ListCreateAPIView):
     serializer_class = EventSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Event.objects.annotate(
-        going_count=Count('going', distinct=True)
-    )
+        going_count=Count('eventgo', distinct=True)
+    ).order_by("-created_at")
     
     filter_backends = [
         filters.OrderingFilter,
@@ -52,5 +52,5 @@ class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = EventSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Event.objects.annotate(
-        going_count=Count("going", distinct=True)
-    )
+        going_count=Count("eventgo", distinct=True)
+    ).order_by("-created_at")

@@ -4,14 +4,14 @@ from datetime import *
 from taggit.managers import TaggableManager
 
 EVENT_CATEGORIES = (
-    ("climate_rally", "Climate Rally"),
-    ("tree_planting", "Tree Planting"),
-    ("green_workshop", "Green Workshop"),
-    ("sustainability_talk", "Sustainability Talk"),
-    ("eco_fair", "Eco Fair"),
-    ("clean_energy", "Clean Energy"),
-    ("environmental_cleanup", "Environmental Cleanup"),
-    ("other", "Other"),
+    ("Climate Rally", "Climate Rally"),
+    ("Tree Planting", "Tree Planting"),
+    ("Green Workshop", "Green Workshop"),
+    ("Sustainability Talk", "Sustainability Talk"),
+    ("Eco Fair", "Eco Fair"),
+    ("Clean Energy", "Clean Energy"),
+    ("Environmental Cleanup", "Environmental Cleanup"),
+    ("Other", "Other"),
 )
 
 class Event(models.Model):
@@ -35,10 +35,6 @@ class Event(models.Model):
     image = models.ImageField(
         upload_to='images/', default='../default_post_npnwpm', blank=True
     )
-    going = models.ManyToManyField(User,
-        related_name='events_going', blank=True)
-    not_going = models.ManyToManyField(User,
-        related_name='events_not_going', blank=True)
 
 
     class Meta:

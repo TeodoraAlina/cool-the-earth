@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Event
 from taggit.serializers import (TagListSerializerField, TaggitSerializer)
+from eventgo.models import Going
 
 
 class EventSerializer(TaggitSerializer, serializers.ModelSerializer):
@@ -12,22 +13,8 @@ class EventSerializer(TaggitSerializer, serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     tags = TagListSerializerField()
     profile_image = serializers.ReadOnlyField(source='owner.profile.profile_picture.url')
-    going = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
-    not_going = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
-    is_going = serializers.BooleanField(write_only=True, required=False)
-
-    def update(self, instance, validated_data):
-        is_going = validated_data.pop('is_going', None)
-        if is_going is not None:
-            user = self.context['request'].user
-            if is_going:
-                instance.going.add(user)
-                instance.not_going.remove(user)
-            else:
-                instance.not_going.add(user)
-                instance.going.remove(user)
-
-        return super().update(instance, validated_data)
+    going_id = serializers.SerializerMethodField()
+    going_count = serializers.ReadOnlyField()
 
     def validate_image(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -48,6 +35,13 @@ class EventSerializer(TaggitSerializer, serializers.ModelSerializer):
         """
         request = self.context['request']
         return request.user == obj.owner
+
+    def get_going_id(self, obj):
+        user = self.context["request"].user
+        if user.is_authenticated:
+            going = Going.objects.filter(owner=user, event=obj).first()
+            return going.id if going else None
+        return None
 
     class Meta:
         """
@@ -71,7 +65,6 @@ class EventSerializer(TaggitSerializer, serializers.ModelSerializer):
             'tags', 
             'category', 
             'image',
-            'going',
-            'not_going',
-            'is_going',
+            'going_id',
+            'going_count',
         ]
