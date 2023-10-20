@@ -1,0 +1,46 @@
+.Event {
+    background-color: #E5E1BF;
+    border: 1px solid #dadadf;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    text-align: center;
+    color: #357266;
+}
+
+.Event figure,
+h5 {
+    margin: 0 0;
+}
+
+.EventDetail {
+    margin: 5px 0;
+    background-color: #E5E1BF;
+}
+
+.Going {
+    color: #357266;
+}
+
+.Going:hover {
+    color: #0E3B43;
+}
+
+.GoingOutline:hover {
+    color: #357266;
+}
+
+.Tags {
+    font-weight: bold;
+    color: #D19C64;
+}
+
+i {
+    color: #D19C64;
+}
+
+i > span {
+    font-size: 15px;
+    color: #357266;
+    font-family: "Poppins", sans-serif;
+    font-weight:400
+}

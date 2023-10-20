@@ -5,6 +5,9 @@
 
 .NavLink {
     padding: 5px;
+    font-family: "Poppins", sans-serif;
+    color: #357266;
+    font-weight: bold;
 }
   
 .Active i {

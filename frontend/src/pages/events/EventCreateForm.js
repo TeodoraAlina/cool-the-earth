@@ -21,10 +21,10 @@ import { axiosReq } from "../../api/axiosDefaults";
 
 
 const EVENT_CATEGORIES = [
-    ["climate_rally", "Climate Rally"],
+    ["Climate Rally", "Climate Rally"],
     ["tree_planting", "Tree Planting"],
     ["green_workshop", "Green Workshop"],
-    ["sustainability_talk", "Sustainability Talk"],
+    ["Sustainability Talk", "Sustainability Talk"],
     ["eco_fair", "Eco Fair"],
     ["clean_energy", "Clean Energy"],
     ["environmental_cleanup", "Environmental Cleanup"],
@@ -44,8 +44,6 @@ function EventCreateForm() {
       tags: "",
       category: "",
       image: "",
-      going: false,
-      not_going: false,
     });
   
     const {
@@ -58,8 +56,6 @@ function EventCreateForm() {
       tags,
       category,
       image,
-      going,
-      not_going,
     } = eventData;
   
     const imageInput = useRef(null);
@@ -98,8 +94,6 @@ function EventCreateForm() {
       formData.append("category", category);
       formData.append("tags", tags);
       formData.append("image", imageInput.current.files[0]);
-      formData.append("going", going);
-      formData.append("not_going", not_going);
   
       try {
         const { data } = await axiosReq.post("/events/", formData);
@@ -237,43 +231,13 @@ function EventCreateForm() {
                     {message}
                 </Alert>
             ))}
-            <Form.Group>
-                <Form.Label>Going</Form.Label>
-                <Form.Check
-                    type="radio"
-                    name="going"
-                    id="going-radio"
-                    checked={going}
-                    onChange={() => setEventData({ ...eventData, going: true, not_going: false })}
-                />
-            </Form.Group>
-            {errors?.going?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
-            <Form.Group>
-                <Form.Label>Not Going</Form.Label>
-                <Form.Check
-                    type="radio"
-                    name="not_going"
-                    id="not-going-radio"
-                    checked={not_going}
-                    onChange={() => setEventData({ ...eventData, going: false, not_going: true })}
-                />
-            </Form.Group>
-            {errors?.not_going?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
             <Button
-                className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                className={`${btnStyles.Button} ${btnStyles.Green}`}
                 onClick={() => history.goBack()}
             >
                 cancel
             </Button>
-            <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+            <Button className={`${btnStyles.Button} ${btnStyles.Green}`} type="submit">
                 create
             </Button>
         </div>
@@ -294,7 +258,7 @@ function EventCreateForm() {
                                     </figure>
                                     <div>
                                         <Form.Label
-                                            className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                                            className={`${btnStyles.Button} ${btnStyles.Green} btn`}
                                             htmlFor="image-upload"
                                         >
                                             Change the image
