@@ -12,7 +12,7 @@ class EventSerializer(TaggitSerializer, serializers.ModelSerializer):
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     tags = TagListSerializerField()
-    profile_image = serializers.ReadOnlyField(source='owner.profile.profile_picture.url')
+    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
     going_id = serializers.SerializerMethodField()
     going_count = serializers.ReadOnlyField()
 
