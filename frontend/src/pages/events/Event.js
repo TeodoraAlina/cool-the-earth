@@ -33,7 +33,7 @@ const Event = (props) => {
 
     const handleGoing = async () => {
         try {
-            const { data } = await axiosRes.event("/eventgo/", { event: id });
+            const { data } = await axiosRes.post("/eventgo/", { event: id });
             setEvents((prevEvents) => ({
                 ...prevEvents,
                 results: prevEvents.results.map((event) => {
@@ -60,8 +60,11 @@ const Event = (props) => {
             }));
         } catch (err) {
             console.log(err);
+            console.log(err.response)
         }
     };
+
+    console.log(going_count)
     return (
         <Card className={styles.Event}>
             <Card.Body>
@@ -104,15 +107,20 @@ const Event = (props) => {
                             overlay={<Tooltip>You can't click going to your own event!</Tooltip>}
                         >
                             <i className="fa-solid fa-circle-check">
-                                <span> {going_count} Going</span></i>
+                                <span> {going_count} Going</span>
+                            </i>
                         </OverlayTrigger>
                     ) : going_id ? (
-                        <span onClick={handleGoing}>
-                            <i className={`fa-solid fa-circle-check ${styles.Going}`} />
+                        <span onClick={handleNotGoing}>
+                            <i className={`fa-solid fa-circle-check ${styles.Going}`}>
+                                <span> {going_count} Going</span>
+                            </i>
                         </span>
                     ) : currentUser ? (
-                        <span onClick={handleNotGoing}>
-                            <i className={`fa-solid fa-circle-check ${styles.GoingOutline}`} />
+                        <span onClick={handleGoing}>
+                            <i className={`fa-solid fa-circle-check ${styles.GoingOutline}`}>
+                                <span> {going_count} Going</span>
+                            </i>
                         </span>
                     ) : (
                         <OverlayTrigger
