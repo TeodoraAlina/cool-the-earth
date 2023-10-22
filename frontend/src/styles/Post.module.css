@@ -22,3 +22,8 @@ h5 {
 .HeartOutline:hover {
     color: #f85032;
 }
+
+.Tags {
+    font-weight: bold;
+    color: #D19C64;
+}

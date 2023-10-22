@@ -60,11 +60,8 @@ const Event = (props) => {
             }));
         } catch (err) {
             console.log(err);
-            console.log(err.response)
         }
     };
-
-    console.log(going_count)
     return (
         <Card className={styles.Event}>
             <Card.Body>
