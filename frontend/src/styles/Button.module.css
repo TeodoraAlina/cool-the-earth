@@ -46,23 +46,6 @@
     color: #357266;
 }
   
-.Black,
-.BlackOutline:hover {
-    /* background-color: #242a3d;
-    color: white; */
-    background-color: #E5E1BF;
-    color: aliceblue;
-}
-  
-.Black:hover,
-.BlackOutline {
-    /* background-color: #dadadf;
-    color: #242a3d;
-    border-color: #242a3d; */
-    background-color: aliceblue;
-    color: #0E3B43;
-}
-  
 .Bright {
     background-color: #357266;
     color: aliceblue;
