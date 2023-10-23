@@ -4,6 +4,13 @@
     width: 120px;
     margin: 4px;
 }
+
+.Tabs {
+  background-color: #E5E1BF;
+  color: #357266;
+  margin-top: 2.5rem;
+}
+
   
 @media screen and (max-width: 991px) {
     .ProfileImage {

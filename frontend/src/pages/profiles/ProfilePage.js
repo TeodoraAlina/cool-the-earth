@@ -5,6 +5,8 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import Asset from "../../components/Asset";
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 
 import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
@@ -122,9 +124,6 @@ function ProfilePage() {
 
   const mainProfilePosts = (
     <>
-      <hr />
-      <p className="text-center">{profile?.owner}'s posts</p>
-      <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
           children={profilePosts.results.map((post) => (
@@ -146,9 +145,6 @@ function ProfilePage() {
 
   const mainProfileEvents = (
     <>
-      <hr />
-      <p className="text-center">{profile?.owner}'s events</p>
-      <hr />
       {profileEvents.results.length ? (
         <InfiniteScroll
           children={profileEvents.results.map((event) => (
@@ -168,6 +164,19 @@ function ProfilePage() {
     </>
   );
 
+  const profileTabs = (
+    <>
+      <Tabs defaultActiveKey="posts" id="profile-tab" className={styles.Tabs}>
+        <Tab eventKey="posts" title={`${profile?.owner}'s posts`} className={styles.Tab}>
+          {mainProfilePosts}
+        </Tab>
+        <Tab eventKey="events" title={`${profile?.owner}'s events`} className={styles.Tab}>
+          {mainProfileEvents}
+        </Tab>
+      </Tabs>
+    </>
+  );
+
 
   return (
     <Row>
@@ -177,8 +186,7 @@ function ProfilePage() {
           {hasLoaded ? (
             <>
               {mainProfile}
-              {mainProfilePosts}
-              {mainProfileEvents}
+              {profileTabs}
             </>
           ) : (
             <Asset spinner />
