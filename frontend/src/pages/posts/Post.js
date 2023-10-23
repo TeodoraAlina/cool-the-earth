@@ -16,7 +16,6 @@ const Post = (props) => {
     comments_count,
     likes_count,
     like_id,
-    title,
     description,
     image,
     location,
@@ -96,16 +95,18 @@ const Post = (props) => {
           </div>
         </Media>
       </Card.Body>
+      {description && <Card.Text className={styles.Description}>{description}</Card.Text>}
       <Link to={`/posts/${id}`}>
-        <Card.Img src={image} alt={title} />
+        <Card.Img src={image} alt={description} />
       </Link>
       <Card.Body>
-        {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {description && <Card.Text>{description}</Card.Text>}
-        {tags && <Card.Text className={styles.Tags}><i className="fa-solid fa-tag"></i>{tags}</Card.Text>}
+        {tags && environmental_metrics && (
+          <Card.Text className={styles.Tags}>
+            <i class="fa-solid fa-seedling"></i>{environmental_metrics} | 
+            <i className="fa-solid fa-tag"></i>{tags}
+          </Card.Text>
+        )}
         {location && <Card.Text>{location}</Card.Text>}
-        {environmental_metrics && <Card.Text>{environmental_metrics}</Card.Text>}
-
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger

@@ -1,9 +1,11 @@
 .Post {
-    background-color: #ffffff;
-    border: 1px solid #dadadf;
+    background-color: #E5E1BF;
+    border: 1px solid #D19C64;
     border-radius: 2px;
     margin-bottom: 16px;
     text-align: center;
+    color: #357266;
+    font-weight: 600;
 }
   
 .Post figure,
@@ -23,7 +25,8 @@ h5 {
     color: #f85032;
 }
 
-.Tags {
-    font-weight: bold;
-    color: #D19C64;
-}
+.Description {
+    padding-right: 35px;
+    padding-left: 35px;
+    text-align: left;
+  }
