@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
+import { useRedirect } from "../../hooks/useRedirect";
 
 import { Link, useHistory } from "react-router-dom";
 
@@ -18,7 +19,7 @@ import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
-
+  useRedirect("loggedIn")
   const [signInData, setSignInData] = useState({
     username: "",
     password: "",
