@@ -5,6 +5,7 @@
     margin-bottom: 16px;
     text-align: center;
     color: #357266;
+    font-weight: 600;
 }
 
 .Event figure,
@@ -42,5 +43,11 @@ i > span {
     font-size: 15px;
     color: #357266;
     font-family: "Poppins", sans-serif;
-    font-weight:400
+    font-weight:600
+}
+
+.Description {
+    padding-right: 35px;
+    padding-left: 35px;
+    text-align: left;
 }

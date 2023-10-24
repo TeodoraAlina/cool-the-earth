@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/Event.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Card, Col, Container, Media, OverlayTrigger, Row, Tooltip } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -15,6 +15,7 @@ const Event = (props) => {
         profile_image,
         going_count,
         going_id,
+        title,
         description,
         tags,
         category,
@@ -96,27 +97,50 @@ const Event = (props) => {
                 </div>
             </Media>
             </Card.Body>
+            {title && <Card.Text className={styles.Title}>{title}</Card.Text>}
+            {description && <Card.Text className={styles.Description}>{description}</Card.Text>}
             <Link to={`/events/${id}`}>
                 <Card.Img src={image} alt={description} />
             </Link>
             <Card.Body>
-                {description && <Card.Text>{description}</Card.Text>}
-                {category && tags &&(
-                    <Card.Text className={styles.CategoryTags}>
-                        <i className="fa-solid fa-users-line"></i>{category} |
-                        <i className="fa-solid fa-tag"></i>{tags}
-                    </Card.Text>
-                )}
-                {event_date && event_time && (
-                    <Card.Text className={styles.EventDetail}>
-                        <i className="fa-solid fa-calendar"></i>{event_date} | {event_time}
-                    </Card.Text>
-                )}
-                {city && country && (
-                    <Card.Text className={styles.EventDetail}>
-                        <i className="fa-solid fa-location-marker"></i>{city}, {country}
-                    </Card.Text>
-                )}
+                <Container className="event-grid">
+                    <Row>
+                        <Col xs={12} md={6}>
+                            {event_date && event_time && (
+                                <Card.Text className={styles.EventDetail}>
+                                    <i className="fa-solid fa-calendar"></i>{event_date} | {event_time}
+                                </Card.Text>
+                            )}
+                        </Col>
+                        <Col xs={12} md={6}>
+                            {city && country && (
+                                <Card.Text className={styles.EventDetail}>
+                                    <i class="fa-solid fa-location-dot"></i>{city}, {country}
+                                </Card.Text>
+                            )}
+                        </Col>
+                    </Row>
+                </Container>
+                <Card.Body>
+                    <Container>
+                        <Row>
+                            <Col xs={12} md={6}>
+                                {category &&(
+                                <Card.Text>
+                                    <i className="fa-solid fa-users-line"></i>{category}
+                                </Card.Text>
+                                )}
+                            </Col>
+                            <Col xs={12} md={6}>
+                                {tags && (
+                                <Card.Text>
+                                    <i className="fa-solid fa-tag"></i>{tags}
+                                </Card.Text>
+                                )}
+                            </Col>
+                        </Row>
+                    </Container>
+                </Card.Body>
                 <div className={styles.EventBar}>
                     {is_owner ? (
                         <OverlayTrigger
