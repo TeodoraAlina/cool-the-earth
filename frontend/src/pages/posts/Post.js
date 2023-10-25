@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
+import { Card, Container, Media, OverlayTrigger, Tooltip, Col, Row } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -100,13 +100,32 @@ const Post = (props) => {
         <Card.Img src={image} alt={description} />
       </Link>
       <Card.Body>
-        {tags && environmental_metrics && (
-          <Card.Text className={styles.Tags}>
-            <i class="fa-solid fa-seedling"></i>{environmental_metrics} | 
-            <i className="fa-solid fa-tag"></i>{tags}
-          </Card.Text>
-        )}
-        {location && <Card.Text>{location}</Card.Text>}
+        <Container>
+          <Row>
+            <Col xs={12} md={4}>
+              {environmental_metrics &&
+                <Card.Text>
+                  <i class="fa-solid fa-seedling"></i>{environmental_metrics}
+                </Card.Text>
+              }
+            </Col>
+            <Col xs={12} md={4}>
+              {location &&
+                <Card.Text>
+                  <i class="fa-solid fa-location-dot"></i>{location}
+                </Card.Text>
+              }
+            </Col>
+            <Col xs={12} md={4}>
+              {tags &&
+                <Card.Text>
+                  <i className="fa-solid fa-tag"></i>{tags}
+                </Card.Text>
+              }
+            </Col>
+            
+          </Row>
+        </Container>
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger
