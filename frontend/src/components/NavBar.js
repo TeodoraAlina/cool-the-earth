@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logov1.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -10,6 +10,7 @@ import {
 import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle.js";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -53,27 +54,47 @@ const NavBar = () => {
       >
         <i className="fa-solid fa-leaf"></i>About
       </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/feed"
-      >
-        <i className="fas fa-stream"></i>Feed
-      </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/liked"
-      >
-        <i className="fas fa-heart"></i>Liked
-      </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/events"
-      >
-        <i className="fa-regular fa-calendar-days"></i>Events
-      </NavLink>
+        <NavDropdown
+          className={styles.NavDropdown}
+          activeClassName={styles.Active}
+          title={<span><i className="fas fa-stream"></i>Feed</span>}
+          onClick={() => {
+            setExpanded(!expanded)
+          }}
+        >
+          <NavDropdown.Item
+            className={styles.NavLink}
+            as={Link}
+            activeClassName={styles.Active}
+            to="/posts"
+          >
+          <i class="fa-solid fa-images"></i>Posts
+          </NavDropdown.Item>
+          <NavDropdown.Item
+            className={styles.NavLink}
+            as={Link}
+            activeClassName={styles.Active}
+            to="/liked"
+          >
+            <i className="fas fa-heart"></i>Liked
+          </NavDropdown.Item>
+          <NavDropdown.Item
+            className={styles.NavLink}
+            as={Link}
+            activeClassName={styles.Active}
+            to="/going"
+          >
+            <i className="fa-solid fa-circle-check"></i>Going
+          </NavDropdown.Item>
+          <NavDropdown.Item
+            className={styles.NavLink}
+            as={Link}
+            activeClassName={styles.Active}
+            to="/events"
+          >
+            <i className="fa-regular fa-calendar-days"></i>Events
+          </NavDropdown.Item>
+        </NavDropdown>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>

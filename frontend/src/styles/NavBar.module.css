@@ -13,3 +13,9 @@
 .Active i {
     color: #0E3B43;
 }
+
+.NavDropdown span {
+    font-family: "Poppins", sans-serif;
+    color: #357266;
+    font-weight: bold;
+}
