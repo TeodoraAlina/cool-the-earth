@@ -1,0 +1,57 @@
+.Container {
+    padding: 2rem;
+    margin-top: 1rem;
+}
+
+.Logo2 {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.AboutButtons {
+    margin: 4rem 0;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    width: 350px;
+    height: 70px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+
+}
+
+.AboutButtons:hover {
+    box-shadow: 0 0 5px #0E3B43;
+}
+
+.AboutButtons:focus {
+    box-shadow: 0 0 5px #0E3B43;
+}
+
+.AboutText p,
+.AboutText li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: #357266;
+    padding: 20px;
+    line-height: 1.6;
+    list-style-type: disclosure-closed;
+
+}
+
+.AboutJoin {
+    background-color: #D19C64;
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.AboutJoin:hover {
+    color: #D19C64;
+    border-color: #D19C64;
+}
+

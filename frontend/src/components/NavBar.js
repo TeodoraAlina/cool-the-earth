@@ -50,7 +50,7 @@ const NavBar = () => {
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
-        to="/about"
+        to="/aboutpage"
       >
         <i className="fa-solid fa-leaf"></i>About
       </NavLink>
@@ -108,6 +108,13 @@ const NavBar = () => {
   );
   const loggedOutIcons = (
     <>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/aboutpage"
+      >
+        <i className="fa-solid fa-leaf"></i>About
+      </NavLink>
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
