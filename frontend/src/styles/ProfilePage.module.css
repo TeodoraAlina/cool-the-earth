@@ -2,13 +2,31 @@
     object-fit: cover;
     height: 120px;
     width: 120px;
-    margin: 4px;
+    margin: 20px 4px;
 }
 
 .Tabs {
   background-color: #E5E1BF;
   color: #357266;
   margin-top: 2.5rem;
+  flex-wrap: nowrap;
+}
+
+a .Tab:active{
+  background-color: black;
+}
+
+.Count,
+.ProfileDescription {
+  font-family: 'Poppins', sans-serif;
+  color: #357266;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.ProfileDescription {
+  color: #0E3B43;
+  padding: 30px;
 }
 
   
@@ -17,4 +35,10 @@
       width: 250px;
       height: 250px;
     }
+}
+
+@media screen and (max-width: 1200px) {
+  .Count {
+    font-size: 12px;
+  }
 }

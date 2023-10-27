@@ -78,23 +78,23 @@ function ProfilePage() {
           />
         </Col>
         <Col lg={6}>
-          <h3 className="m-2">{profile?.owner}</h3>
+          <h3 className="m-4">{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
-              <div>{profile?.posts_count}</div>
-              <div>posts</div>
+              <div className={styles.Count}>{profile?.posts_count}</div>
+              <div className={styles.Count}>posts</div>
             </Col>
             <Col xs={3} className="my-2">
-              <div>{profile?.events_count}</div>
-              <div>events</div>
+              <div className={styles.Count}>{profile?.events_count}</div>
+              <div className={styles.Count}>events</div>
             </Col>
             <Col xs={3} className="my-2">
-              <div>{profile?.followers_count}</div>
-              <div>followers</div>
+              <div className={styles.Count}>{profile?.followers_count}</div>
+              <div className={styles.Count}>followers</div>
             </Col>
             <Col xs={3} className="my-2">
-              <div>{profile?.following_count}</div>
-              <div>following</div>
+              <div className={styles.Count}>{profile?.following_count}</div>
+              <div className={styles.Count}>following</div>
             </Col>
           </Row>
         </Col>
@@ -117,7 +117,7 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        {profile?.description && <Col className="p-3">{profile.description}</Col>}
+        {profile?.description && <Col className={styles.ProfileDescription}>{profile.description}</Col>}
       </Row>
     </>
   );
