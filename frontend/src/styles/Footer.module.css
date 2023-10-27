@@ -1,0 +1,25 @@
+.FooterContainer {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #357266;
+    padding: 30px 0px;
+}
+
+.FooterH5 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.LogoFooter {
+    width: 300px;
+}
+
+.LogoCopyrightContainer {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.CopyrightText {
+    margin-top: 20px;
+}

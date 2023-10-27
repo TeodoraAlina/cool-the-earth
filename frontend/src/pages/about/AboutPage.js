@@ -1,10 +1,11 @@
 
-import styles from "../../styles/AboutPage.module.css"
+import styles from "../../styles/AboutPage.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Collapse, Carousel } from 'react-bootstrap';
 import logo from "../../assets/logov2.png";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import Footer from "./Footer";
 
 const AboutPage = () => {
   const [openMission, setOpenMission] = useState(false);
@@ -13,6 +14,7 @@ const AboutPage = () => {
   const [openJoin, setOpenJoin] = useState(false);
 
   return (
+    <>
     <Container className={styles.Container}>
       <Row className="d-flex justify-content-center">
         <Col xs={12} md={8} className="text-center">
@@ -168,10 +170,11 @@ const AboutPage = () => {
               </Link>
             </div>
           </Collapse>
-          
         </Col>
       </Row>
     </Container>
+      <Footer />
+    </>
   );
 };
 
