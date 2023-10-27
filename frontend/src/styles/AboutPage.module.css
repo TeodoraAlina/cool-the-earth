@@ -55,3 +55,13 @@
     border-color: #D19C64;
 }
 
+.AboutH3 {
+    font-size: 1.75rem;
+    color: #ffff;
+}
+
+@media (max-width:768px) {
+    .AboutH3 {
+        font-size: 1rem;
+    }
+}

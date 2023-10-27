@@ -25,34 +25,40 @@ const AboutPage = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://res.cloudinary.com/dxajyjfpw/image/upload/v1697525019/IMG_2907_zcbk87.jpg"
+            src="https://res.cloudinary.com/dxajyjfpw/image/upload/v1698413586/pexels-tom-balabaud-3404361_hxj0b1.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3 className={styles.AboutH3} style={{ color: "#ffff" }}>Embrace Nature's Majesty</h3>
+            <p className="d-none d-sm-block" style={{ color: "#ffff" }}>Discover the tranquil beauty of untouched landscapes. 
+              Our mission at Cool the Earth is to protect and preserve these natural wonders. 
+              Join us in experiencing the awe of Earth’s majestic scenery.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://res.cloudinary.com/dxajyjfpw/image/upload/v1697525019/IMG_2907_zcbk87.jpg"
+            src="https://res.cloudinary.com/dxajyjfpw/image/upload/v1698410867/pexels-inna-rabotyagina-8018592_Large_rpe3mn.jpg"
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3 className={styles.AboutH3}>Join our Environmental Cleanup Efforts</h3>
+            <p className="d-none d-sm-block">At Cool the Earth, we believe in the power of collective action. 
+              Be part of our mission to preserve our planet. Join our dedicated community in cleaning up beaches, 
+              one step closer to a greener world.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            
+            src="https://res.cloudinary.com/dxajyjfpw/image/upload/v1698410867/pexels-thirdman-7656721_Large_bnpt3h.jpg"
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <h3 className={styles.AboutH3}>Grow a Greener Tomorrow</h3>
+            <p className="d-none d-sm-block" style={{ color: "#ffff" }}>Each tree we plant is a step towards a healthier planet. 
+              Join our mission to combat climate change, one tree at a time. 
+              Together, we can create a sustainable future filled with lush forests and cleaner air.</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
