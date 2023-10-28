@@ -1,0 +1,18 @@
+.NotFound {
+    text-align: center;
+    background-color: #E5E1BF;
+    padding: 30px;
+    margin-top: 2rem;
+}
+
+.NotFound img {
+    max-width: 70%;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.ReturnButton {
+    width: 220px;
+    padding: 20px;
+    font-size: 15px;
+}
