@@ -21,7 +21,6 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import AboutPage from "./pages/about/AboutPage";
 import NotFound from "./components/NotFound";
 
-
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
@@ -79,10 +78,18 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
-          <Route exact path="/events/create" render={() => <EventCreateForm />} />
+          <Route
+            exact
+            path="/events/create"
+            render={() => <EventCreateForm />}
+          />
           <Route exact path="/events/:id" render={() => <EventPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
-          <Route exact path="/events/:id/edit" render={() => <EventEditForm />} />
+          <Route
+            exact
+            path="/events/:id/edit"
+            render={() => <EventEditForm />}
+          />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route exact path="/aboutpage" render={() => <AboutPage />} />
           <Route

@@ -12,8 +12,9 @@ export const handlers = [
         first_name: "",
         last_name: "",
         profile_id: 2,
-        profile_image: "https://res.cloudinary.com/dxajyjfpw/image/upload/v1/media/../default_profile_gpevq4"
-      })
+        profile_image:
+          "https://res.cloudinary.com/dxajyjfpw/image/upload/v1/media/../default_profile_gpevq4",
+      }),
     );
   }),
   rest.post(`${baseURL}/dj-rest-auth/logout/`, (req, res, ctx) => {

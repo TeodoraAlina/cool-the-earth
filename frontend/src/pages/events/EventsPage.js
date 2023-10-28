@@ -28,7 +28,9 @@ function EventsPage({ message, filter = "" }) {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const { data } = await axiosReq.get(`/events/?${filter}search=${query}`);
+        const { data } = await axiosReq.get(
+          `/events/?${filter}search=${query}`,
+        );
         setEvents(data);
         setHasLoaded(true);
       } catch (err) {
@@ -89,7 +91,7 @@ function EventsPage({ message, filter = "" }) {
         )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-          <PopularProfiles />
+        <PopularProfiles />
       </Col>
     </Row>
   );

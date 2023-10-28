@@ -1,7 +1,15 @@
 import React from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Container, Media, OverlayTrigger, Tooltip, Col, Row } from "react-bootstrap";
+import {
+  Card,
+  Container,
+  Media,
+  OverlayTrigger,
+  Tooltip,
+  Col,
+  Row,
+} from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -75,7 +83,6 @@ const Post = (props) => {
     }
   };
 
-  
   return (
     <Card className={styles.Post}>
       <Card.Body>
@@ -84,7 +91,7 @@ const Post = (props) => {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-            <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center">
             <span>{updated_at}</span>
             {is_owner && postPage && (
               <MoreDropdown
@@ -95,7 +102,9 @@ const Post = (props) => {
           </div>
         </Media>
       </Card.Body>
-      {description && <Card.Text className={styles.Description}>{description}</Card.Text>}
+      {description && (
+        <Card.Text className={styles.Description}>{description}</Card.Text>
+      )}
       <Link to={`/posts/${id}`}>
         <Card.Img src={image} alt={description} />
       </Link>
@@ -103,27 +112,29 @@ const Post = (props) => {
         <Container>
           <Row>
             <Col xs={12} md={4}>
-              {environmental_metrics &&
+              {environmental_metrics && (
                 <Card.Text>
-                  <i class="fa-solid fa-seedling"></i>{environmental_metrics}
+                  <i class="fa-solid fa-seedling"></i>
+                  {environmental_metrics}
                 </Card.Text>
-              }
+              )}
             </Col>
             <Col xs={12} md={4}>
-              {location &&
+              {location && (
                 <Card.Text>
-                  <i class="fa-solid fa-location-dot"></i>{location}
+                  <i class="fa-solid fa-location-dot"></i>
+                  {location}
                 </Card.Text>
-              }
+              )}
             </Col>
             <Col xs={12} md={4}>
-              {tags &&
+              {tags && (
                 <Card.Text>
-                  <i className="fa-solid fa-tag"></i>{tags}
+                  <i className="fa-solid fa-tag"></i>
+                  {tags}
                 </Card.Text>
-              }
+              )}
             </Col>
-            
           </Row>
         </Container>
         <div className={styles.PostBar}>

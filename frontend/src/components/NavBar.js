@@ -19,12 +19,12 @@ const NavBar = () => {
 
   const handleSignOut = async () => {
     try {
-        await axios.post("/dj-rest-auth/logout/");
-        setCurrentUser(null);
+      await axios.post("/dj-rest-auth/logout/");
+      setCurrentUser(null);
     } catch (err) {
-        //console.log(err);
+      //console.log(err);
     }
-};
+  };
 
   const addPostEventIcons = (
     <>
@@ -53,47 +53,51 @@ const NavBar = () => {
       >
         <i className="fa-solid fa-leaf"></i>About
       </NavLink>
-        <NavDropdown
-          className={styles.NavDropdown}
-          activeclassname={styles.Active}
-          title={<span><i className="fas fa-stream"></i>Feed</span>}
-          onClick={() => {
-            setExpanded(!expanded)
-          }}
+      <NavDropdown
+        className={styles.NavDropdown}
+        activeclassname={styles.Active}
+        title={
+          <span>
+            <i className="fas fa-stream"></i>Feed
+          </span>
+        }
+        onClick={() => {
+          setExpanded(!expanded);
+        }}
+      >
+        <NavDropdown.Item
+          className={styles.NavLink}
+          as={NavLink}
+          activeClassName={styles.Active}
+          to="/posts"
         >
-          <NavDropdown.Item
-            className={styles.NavLink}
-            as={NavLink}
-            activeClassName={styles.Active}
-            to="/posts"
-          >
           <i className="fa-solid fa-images"></i>Posts
-          </NavDropdown.Item>
-          <NavDropdown.Item
-            className={styles.NavLink}
-            as={NavLink}
-            activeClassName={styles.Active}
-            to="/liked"
-          >
-            <i className="fas fa-heart"></i>Liked
-          </NavDropdown.Item>
-          <NavDropdown.Item
-            className={styles.NavLink}
-            as={NavLink}
-            activeclassname={styles.Active}
-            to="/going"
-          >
-            <i className="fa-solid fa-circle-check"></i>Going
-          </NavDropdown.Item>
-          <NavDropdown.Item
-            className={styles.NavLink}
-            as={NavLink}
-            activeclassname={styles.Active}
-            to="/events"
-          >
-            <i className="fa-regular fa-calendar-days"></i>Events
-          </NavDropdown.Item>
-        </NavDropdown>
+        </NavDropdown.Item>
+        <NavDropdown.Item
+          className={styles.NavLink}
+          as={NavLink}
+          activeClassName={styles.Active}
+          to="/liked"
+        >
+          <i className="fas fa-heart"></i>Liked
+        </NavDropdown.Item>
+        <NavDropdown.Item
+          className={styles.NavLink}
+          as={NavLink}
+          activeclassname={styles.Active}
+          to="/going"
+        >
+          <i className="fa-solid fa-circle-check"></i>Going
+        </NavDropdown.Item>
+        <NavDropdown.Item
+          className={styles.NavLink}
+          as={NavLink}
+          activeclassname={styles.Active}
+          to="/events"
+        >
+          <i className="fa-regular fa-calendar-days"></i>Events
+        </NavDropdown.Item>
+      </NavDropdown>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
         <i className="fas fa-sign-out-alt"></i>Sign out
       </NavLink>

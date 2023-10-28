@@ -19,7 +19,6 @@ import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 
-
 function PostCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
@@ -32,7 +31,8 @@ function PostCreateForm() {
     location: "",
     environmental_metrics: "",
   });
-  const { title, description, image, tags, location, environmental_metrics } = postData;
+  const { title, description, image, tags, location, environmental_metrics } =
+    postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -47,24 +47,24 @@ function PostCreateForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
-    
+
     formData.append("title", title);
     formData.append("description", description);
-    formData.append('tags', tags);
-    formData.append('location', location);
+    formData.append("tags", tags);
+    formData.append("location", location);
     formData.append("image", imageInput.current.files[0]);
-    formData.append('environmental_metrics', environmental_metrics);
+    formData.append("environmental_metrics", environmental_metrics);
 
     try {
-        const { data } = await axiosReq.post("/posts/", formData);
-        history.push(`/posts/${data.id}`);
+      const { data } = await axiosReq.post("/posts/", formData);
+      history.push(`/posts/${data.id}`);
     } catch (err) {
-        console.log(err);
-        if (err.response?.status !== 401) {
-            setErrors(err.response?.data);
-        }
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
     }
-};
+  };
 
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
@@ -156,7 +156,10 @@ function PostCreateForm() {
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Green}`} type="submit">
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Green}`}
+        type="submit"
+      >
         create
       </Button>
     </div>

@@ -10,15 +10,15 @@ const NotFound = () => {
     <>
       <Container className={`${styles.NotFound}`}>
         <Asset
-            src={PageNotFound}
-            message={"Sorry, but the page that you requested doesn't exist."}
+          src={PageNotFound}
+          message={"Sorry, but the page that you requested doesn't exist."}
         />
         <Button
-            className={`${btnStyles.Button} ${btnStyles.Green} ${styles.ReturnButton}`}
-            as={Link}
-            to="/"
+          className={`${btnStyles.Button} ${btnStyles.Green} ${styles.ReturnButton}`}
+          as={Link}
+          to="/"
         >
-            Back Home
+          Back Home
         </Button>
       </Container>
     </>

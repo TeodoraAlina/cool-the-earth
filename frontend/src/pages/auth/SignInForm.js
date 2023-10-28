@@ -19,7 +19,7 @@ import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
-  useRedirect("loggedIn")
+  useRedirect("loggedIn");
   const [signInData, setSignInData] = useState({
     username: "",
     password: "",
@@ -112,7 +112,9 @@ function SignInForm() {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={"https://res.cloudinary.com/dxajyjfpw/image/upload/v1697525019/IMG_2907_zcbk87.jpg"}
+          src={
+            "https://res.cloudinary.com/dxajyjfpw/image/upload/v1697525019/IMG_2907_zcbk87.jpg"
+          }
         />
       </Col>
     </Row>

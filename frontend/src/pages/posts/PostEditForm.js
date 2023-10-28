@@ -26,7 +26,8 @@ function PostEditForm() {
     location: "",
     environmental_metrics: "",
   });
-  const { title, description, image, tags, location, environmental_metrics } = postData;
+  const { title, description, image, tags, location, environmental_metrics } =
+    postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -36,9 +37,26 @@ function PostEditForm() {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/${id}/`);
-        const { title, description, image, tags, location, environmental_metrics, is_owner } = data;
+        const {
+          title,
+          description,
+          image,
+          tags,
+          location,
+          environmental_metrics,
+          is_owner,
+        } = data;
 
-        is_owner ? setPostData({ title, description, image, tags, location, environmental_metrics }) : history.push("/");
+        is_owner
+          ? setPostData({
+              title,
+              description,
+              image,
+              tags,
+              location,
+              environmental_metrics,
+            })
+          : history.push("/");
       } catch (err) {
         console.log(err);
       }
@@ -70,9 +88,9 @@ function PostEditForm() {
 
     formData.append("title", title);
     formData.append("description", description);
-    formData.append('tags', tags);
-    formData.append('location', location);
-    formData.append('environmental_metrics', environmental_metrics);
+    formData.append("tags", tags);
+    formData.append("location", location);
+    formData.append("environmental_metrics", environmental_metrics);
 
     if (imageInput?.current?.files[0]) {
       formData.append("image", imageInput.current.files[0]);
@@ -168,7 +186,10 @@ function PostEditForm() {
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Green}`} type="submit">
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Green}`}
+        type="submit"
+      >
         save
       </Button>
     </div>

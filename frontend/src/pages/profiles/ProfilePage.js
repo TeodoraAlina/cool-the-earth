@@ -28,7 +28,6 @@ import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
-
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
@@ -37,7 +36,7 @@ function ProfilePage() {
   const currentUser = useCurrentUser();
   const { id } = useParams();
 
-  const {setProfileData, handleFollow, handleUnfollow} = useSetProfileData();
+  const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
   const { pageProfile } = useProfileData();
 
   const [profile] = pageProfile.results;
@@ -46,12 +45,15 @@ function ProfilePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: pageProfile }, { data: profilePosts },{ data: profileEvents }] =
-          await Promise.all([
-            axiosReq.get(`/profiles/${id}/`),
-            axiosReq.get(`/posts/?owner__profile=${id}`),
-            axiosReq.get(`/events/?owner__profile=${id}`),
-          ]);
+        const [
+          { data: pageProfile },
+          { data: profilePosts },
+          { data: profileEvents },
+        ] = await Promise.all([
+          axiosReq.get(`/profiles/${id}/`),
+          axiosReq.get(`/posts/?owner__profile=${id}`),
+          axiosReq.get(`/events/?owner__profile=${id}`),
+        ]);
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
@@ -68,7 +70,7 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
-    {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
+      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
           <Image
@@ -117,7 +119,9 @@ function ProfilePage() {
               </Button>
             ))}
         </Col>
-        {profile?.description && <Col className={styles.ProfileDescription}>{profile.description}</Col>}
+        {profile?.description && (
+          <Col className={styles.ProfileDescription}>{profile.description}</Col>
+        )}
       </Row>
     </>
   );
@@ -167,16 +171,23 @@ function ProfilePage() {
   const profileTabs = (
     <>
       <Tabs defaultActiveKey="posts" id="profile-tab" className={styles.Tabs}>
-        <Tab eventKey="posts" title={`${profile?.owner}'s posts`} className={styles.Tab}>
+        <Tab
+          eventKey="posts"
+          title={`${profile?.owner}'s posts`}
+          className={styles.Tab}
+        >
           {mainProfilePosts}
         </Tab>
-        <Tab eventKey="events" title={`${profile?.owner}'s events`} className={styles.Tab}>
+        <Tab
+          eventKey="events"
+          title={`${profile?.owner}'s events`}
+          className={styles.Tab}
+        >
           {mainProfileEvents}
         </Tab>
       </Tabs>
     </>
   );
-
 
   return (
     <Row>
