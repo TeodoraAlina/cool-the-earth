@@ -10,7 +10,6 @@ import {
 import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle.js";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -31,14 +30,14 @@ const NavBar = () => {
     <>
       <NavLink
         className={styles.NavLink}
-        activeClassName={styles.Active}
+        activeclassname={styles.Active}
         to="/posts/create"
       >
         <i className="far fa-plus-square"></i>Add post
       </NavLink>
       <NavLink
         className={styles.NavLink}
-        activeClassName={styles.Active}
+        activeclassname={styles.Active}
         to="/events/create"
       >
         <i className="fa-regular fa-calendar-plus"></i>Add event
@@ -56,7 +55,7 @@ const NavBar = () => {
       </NavLink>
         <NavDropdown
           className={styles.NavDropdown}
-          activeClassName={styles.Active}
+          activeclassname={styles.Active}
           title={<span><i className="fas fa-stream"></i>Feed</span>}
           onClick={() => {
             setExpanded(!expanded)
@@ -64,15 +63,15 @@ const NavBar = () => {
         >
           <NavDropdown.Item
             className={styles.NavLink}
-            as={Link}
+            as={NavLink}
             activeClassName={styles.Active}
             to="/posts"
           >
-          <i class="fa-solid fa-images"></i>Posts
+          <i className="fa-solid fa-images"></i>Posts
           </NavDropdown.Item>
           <NavDropdown.Item
             className={styles.NavLink}
-            as={Link}
+            as={NavLink}
             activeClassName={styles.Active}
             to="/liked"
           >
@@ -80,16 +79,16 @@ const NavBar = () => {
           </NavDropdown.Item>
           <NavDropdown.Item
             className={styles.NavLink}
-            as={Link}
-            activeClassName={styles.Active}
+            as={NavLink}
+            activeclassname={styles.Active}
             to="/going"
           >
             <i className="fa-solid fa-circle-check"></i>Going
           </NavDropdown.Item>
           <NavDropdown.Item
             className={styles.NavLink}
-            as={Link}
-            activeClassName={styles.Active}
+            as={NavLink}
+            activeclassname={styles.Active}
             to="/events"
           >
             <i className="fa-regular fa-calendar-days"></i>Events
