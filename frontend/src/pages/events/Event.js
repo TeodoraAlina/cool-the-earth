@@ -129,7 +129,7 @@ const Event = (props) => {
             <Col xs={12} md={6}>
               {city && country && (
                 <Card.Text className={styles.EventDetail}>
-                  <i class="fa-solid fa-location-dot"></i>
+                  <i className="fa-solid fa-location-dot"></i>
                   {city}, {country}
                 </Card.Text>
               )}

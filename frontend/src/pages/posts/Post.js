@@ -114,7 +114,7 @@ const Post = (props) => {
             <Col xs={12} md={4}>
               {environmental_metrics && (
                 <Card.Text>
-                  <i class="fa-solid fa-seedling"></i>
+                  <i className="fa-solid fa-seedling"></i>
                   {environmental_metrics}
                 </Card.Text>
               )}
@@ -122,7 +122,7 @@ const Post = (props) => {
             <Col xs={12} md={4}>
               {location && (
                 <Card.Text>
-                  <i class="fa-solid fa-location-dot"></i>
+                  <i className="fa-solid fa-location-dot"></i>
                   {location}
                 </Card.Text>
               )}

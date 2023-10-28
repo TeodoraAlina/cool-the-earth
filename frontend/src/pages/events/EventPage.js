@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import { useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import Event from "./Event";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function EventPage() {
   const { id } = useParams();
@@ -29,11 +30,11 @@ function EventPage() {
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Most followed for mobile</p>
+        <PopularProfiles mobile />
         <Event {...event.results[0]} setEvents={setEvent} eventPage />
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        Most followed for desktop
+        <PopularProfiles />
       </Col>
     </Row>
   );
