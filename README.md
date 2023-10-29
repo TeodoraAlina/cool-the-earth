@@ -485,7 +485,7 @@ Each profile also includes a "Follow" button, allowing other users to follow or 
 
 1. **Asset**
     - This versatile component is used throughout the website to load images, display messages, and indicate loading spinners.
-    
+
     ![Asset](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698604632/Screenshot_2023-10-29_at_19.37.06_emw5ak.png)
 
 2. **Avatar**
@@ -511,6 +511,117 @@ Each profile also includes a "Follow" button, allowing other users to follow or 
 - Customise your profile further, adding new sections and options to make it uniquely yours.
 3. **Mobile App Development**
 - Stay tuned for the mobile app, extending accessibility to your favorite environmental platform.
+
+## The Skeleton Plane
+
+### Wireframes
+
+<details><summary>About Page Desktop</summary>
+
+
+![About Page Desktop](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698609356/About-us-desktop_dwcdll.png)
+
+  
+
+</details>
+
+
+<details><summary>About Page Mobile</summary>
+
+  
+
+![About Page Mobile](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698609357/about-us-mobile_knycvd.png)
+
+  
+
+</details>
+
+
+
+<details><summary>Home Page desktop</summary>
+
+  
+
+![Home Page Desktop](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698609357/Homepage-desktop_yojkjo.png)
+
+  
+
+</details>
+
+<details><summary>Home Page mobile</summary>
+
+  
+
+![Home Page Mobile](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698609361/homepage-mobile_egnt0r.png)
+
+  
+
+</details>
+
+<details><summary>Create Post desktop</summary>
+
+  
+
+![Create Post desktop](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698609362/new-post-desktop_pe6skz.png)
+
+  
+
+</details>
+
+<details><summary>Create Post mobile</summary>
+
+  
+
+![Create Post mobile](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698609363/new-post-mobile_kgfkmi.png)
+
+  
+
+</details>
+
+<details><summary>Create Event desktop</summary>
+
+  
+
+![Create Event desktop](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698609360/new-event-desktop_pcj9yt.png)
+
+  
+
+</details>
+
+<details><summary>Create Event mobile</summary>
+
+  
+
+![Create Event mobile](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698609362/new-event-mobile_eznbr2.png)
+
+  
+
+</details>
+
+### Database Structure
+
+I've meticulously crafted the database structure for the Cool the Earth Backend API. Here are the core models:
+
+- **Users:** These are slightly customized from Django's standard User model to align with our requirements.
+- **Profiles:** Automatically generated upon user registration, these profiles are tailored to encompass essential information.
+- **Posts:** Users can create posts, which are shared on the platform.
+- **Likes:** Indicate if a user appreciates another user's post.
+- **Comments:** Enable users to provide feedback and commentary on posts.
+- **Events:** Users can create posts for upcoming events, providing valuable event details.
+- **Eventgo:** Signals a user's interest in a publicized event.
+- **Followers:** Empower users to follow each other within the platform.
+
+To understand the relationships between these models, please refer to the Entity-Relationship diagram:
+
+![Entity Relationship Diagram](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698608965/Screenshot_2023-10-29_at_20.48.05_kf93gw.png)
+
+A few considerations about the ER diagram:
+
+- The diagram represents a logical data model, emphasizing the relationships between entities.
+- The Users table in the diagram offers a logical view of user registration data and its connection to the application's data model. Please note that it doesn't encompass all the columns and constraints within the physical database tables managed by Django modules.
+
+
+
 
 
 
