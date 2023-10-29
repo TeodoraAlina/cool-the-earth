@@ -19,3 +19,13 @@
     color: #357266;
     font-weight: bold;
 }
+
+.PreventExpand {
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .PreventExpand {
+        max-height: 56px !important;
+    }
+}

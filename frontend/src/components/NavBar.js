@@ -76,6 +76,14 @@ const NavBar = () => {
         <NavDropdown.Item
           className={styles.NavLink}
           as={NavLink}
+          activeclassname={styles.Active}
+          to="/events"
+        >
+          <i className="fa-regular fa-calendar-days"></i>Events
+        </NavDropdown.Item>
+        <NavDropdown.Item
+          className={styles.NavLink}
+          as={NavLink}
           activeClassName={styles.Active}
           to="/liked"
         >
@@ -88,14 +96,6 @@ const NavBar = () => {
           to="/going"
         >
           <i className="fa-solid fa-circle-check"></i>Going
-        </NavDropdown.Item>
-        <NavDropdown.Item
-          className={styles.NavLink}
-          as={NavLink}
-          activeclassname={styles.Active}
-          to="/events"
-        >
-          <i className="fa-regular fa-calendar-days"></i>Events
         </NavDropdown.Item>
       </NavDropdown>
       <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
@@ -154,7 +154,7 @@ const NavBar = () => {
           onClick={() => setExpanded(!expanded)}
           aria-controls="basic-navbar-nav"
         />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className={styles.PreventExpand}>
           <Nav className="ml-auto text-left">
             <NavLink
               exact
