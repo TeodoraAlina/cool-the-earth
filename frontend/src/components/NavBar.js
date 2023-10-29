@@ -30,14 +30,14 @@ const NavBar = () => {
     <>
       <NavLink
         className={styles.NavLink}
-        activeclassname={styles.Active}
+        activeClassName={styles.Active}
         to="/posts/create"
       >
         <i className="far fa-plus-square"></i>Add post
       </NavLink>
       <NavLink
         className={styles.NavLink}
-        activeclassname={styles.Active}
+        activeClassName={styles.Active}
         to="/events/create"
       >
         <i className="fa-regular fa-calendar-plus"></i>Add event
@@ -55,7 +55,7 @@ const NavBar = () => {
       </NavLink>
       <NavDropdown
         className={styles.NavDropdown}
-        activeclassname={styles.Active}
+        activeClassName={styles.Active}
         title={
           <span>
             <i className="fas fa-stream"></i>Feed
@@ -76,7 +76,7 @@ const NavBar = () => {
         <NavDropdown.Item
           className={styles.NavLink}
           as={NavLink}
-          activeclassname={styles.Active}
+          activeClassName={styles.Active}
           to="/events"
         >
           <i className="fa-regular fa-calendar-days"></i>Events
@@ -92,7 +92,7 @@ const NavBar = () => {
         <NavDropdown.Item
           className={styles.NavLink}
           as={NavLink}
-          activeclassname={styles.Active}
+          activeClassName={styles.Active}
           to="/going"
         >
           <i className="fa-solid fa-circle-check"></i>Going
@@ -156,15 +156,35 @@ const NavBar = () => {
         />
         <Navbar.Collapse id="basic-navbar-nav" className={styles.PreventExpand}>
           <Nav className="ml-auto text-left">
-            <NavLink
-              exact
+          <NavDropdown
+            className={styles.NavDropdown}
+            activeClassName={styles.Active}
+            title={
+              <span>
+                <i class="fa-solid fa-binoculars"></i>Explore
+              </span>
+            }
+            onClick={() => {
+              setExpanded(!expanded);
+            }}
+          >
+            <NavDropdown.Item
               className={styles.NavLink}
+              as={NavLink}
               activeClassName={styles.Active}
               to="/"
             >
-              <i className="fas fa-home"></i>Home
-            </NavLink>
-
+              <i className="fa-solid fa-images"></i>Posts
+            </NavDropdown.Item>
+            <NavDropdown.Item
+              className={styles.NavLink}
+              as={NavLink}
+              activeClassName={styles.Active}
+              to="/eventspage"
+            >
+              <i className="fa-regular fa-calendar-days"></i>Events
+            </NavDropdown.Item>
+          </NavDropdown>
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>

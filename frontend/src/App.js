@@ -39,6 +39,13 @@ function App() {
           />
           <Route
             exact
+            path="/eventspage"
+            render={() => (
+              <EventsPage message="No results found. Adjust the search keyword." />
+            )}
+          />
+          <Route
+            exact
             path="/posts"
             render={() => (
               <PostsPage
