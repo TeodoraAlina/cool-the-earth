@@ -16,10 +16,23 @@
 
 .LogoCopyrightContainer {
     display: flex;
-  flex-direction: column;
-  align-items: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .CopyrightText {
     margin-top: 20px;
+}
+
+@media screen and (min-width:768px) {
+    .LogoCopyrightContainer {
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width:991px) {
+
+    .Contact {
+        margin-right: 20px;
+    }
 }

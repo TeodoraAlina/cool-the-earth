@@ -8,16 +8,16 @@ const Footer = () => {
     <Container fluid className={styles.FooterContainer}>
       <Container>
         <Row>
-          <Col xs={12} md={3} lg={3}>
+          <Col xs={12} md={3} lg={3} className={styles.Contact}>
             <h5 className={styles.FooterH5}>Contact</h5>
             <ul className="list-unstyled">
-              <li className={styles.Contact}>
+              <li>
                 <a href="mailto:info@cooltheearth.com">
                   <i className="fa-solid fa-envelope"></i>Email:
                   info@cooltheearth.com
                 </a>
               </li>
-              <li className={styles.Contact}>
+              <li>
                 <a href="tel:06763459834">
                   <i className="fa-solid fa-phone"></i>Phone: 06763459834
                 </a>
