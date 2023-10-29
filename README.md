@@ -1,5 +1,7 @@
 <h1  align="center">Cool the Earth</h1>
 
+![Responsive Mockup](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698621271/Screenshot_2023-10-30_at_00.14.16_smsgmw.png)
+
 ## Project Overview
 
 **Cool the Earth** is an innovative social media platform committed to driving positive change for our environment. Our mission is to encourage sustainable living and raise awareness about the urgent need to combat climate change. With a focus on practical solutions and community engagement, we provide users with the tools to make a real impact.
@@ -9,6 +11,25 @@ Our platform is more than just a social network; it’s a hub for raising awaren
 View the live project [here](https://cool-the-earth-2122f9015977.herokuapp.com/).
 
 ## Table Of Contents
+[User Experience Design (UX)](#user-experience-design-ux)
+	 -   [The Strategy Plane](#the-strategy-plane)
+		   -   [Project Objective](#project-objective)
+		    -   [Agile Project Management](#agile-project-management)
+		    -   [User Stories](#user-stories)
+	-   [The Structure Plane](#the-structure-plane)
+		-   [Project Structure](#project-structure)
+	    -   [Features](#features)
+	    -   [Future Features](#future-features)
+	-   [The Skeleton Plane](#the-skeleton-plane)
+	    -   [Wireframes](#wireframes)
+        -   [Database Structure](#database-structure)
+	-   [The Surface Plane](#the-surface-plane)
+	    -   [Design](#design)
+-   [Technologies Used Frontend](#technologies-used-frontend)
+-   [Technologies Used Backend](#technologies-used-backend)
+-   [Testing](#testing)
+-   [Deployment](#deployment)
+-   [Credits](#credits)
 
 ## User Experience Design (UX)
 
@@ -661,6 +682,249 @@ With a harmonious balance of style and functionality, Poppins complements the pr
 
 - The images for the posts, events and profiles created on the website were sourced from free stock image provider [Pexels](https://www.pexels.com/) and some from my sister.
 - The icons were imported from [Font Awesome](https://fontawesome.com/).
+
+## Testing
+
+Please click [here](TESTING.md) to read more information about testing Cool the Earth's frontend and backend.
+
+## Technologies Used Frontend
+
+### Languages
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML)  - Provides the content and structure for the website
+-   [CSS3](https://en.wikipedia.org/wiki/CSS)  - Provides the styling for the website
+-   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)  - Provides interactive elements of the website
+-   [React.js](https://en.wikipedia.org/wiki/React_(software))  - Provides the base for the frontend components
+
+### Frameworks, Software and Web Applications
+
+-   [React Bootstrap](https://react-bootstrap.github.io/)  - A CSS framework that helps build solid, responsive, mobile-first sites
+-   [Balsamiq](https://balsamiq.com/)  - Used to create the wireframes
+- [Coolors](https://coolors.co/)  - Used to pick the colour scheme of the website 
+-   [Github](https://github.com/)  - Used to host the repository, store the commit history and manage the project board containing user stories
+-   [Heroku](https://en.wikipedia.org/wiki/Heroku)  - A cloud platform that the application is deployed to
+-   [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)  - Used to test site performance
+- [Logo](https://logo.com/)  - Used to generate the Cool the Earth logo
+-   [Favicon](https://favicon.io/)  - Used to create the favicon
+-   [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/)  - Used to debug and test responsiveness
+- [Google Fonts](https://fonts.google.com/specimen/DM+Sans) - Used to import the website font 
+-   [Cloudinary](https://cloudinary.com/)  - A service that hosts image files in the project.
+-   [HTML Validation](https://validator.w3.org/)  - Used to validate HTML code
+-   [CSS Validation](https://jigsaw.w3.org/css-validator/)  - Used to validate CSS code
+-   [JSHint Validation](https://jshint.com/)  - Used to validate JavaScript code
+- [Pexels](https://www.pexels.com/) - Free stock image provider for posts, events and avatars that were uploaded 
+- [Font Awesome](https://fontawesome.com/) - Used for icons across UI
+
+## Technologies Used Backend
+
+### Languages
+
+- [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>) - Provides the functionality for the DRF backend framework.
+
+### Frameworks & Software
+
+- [Django Rest Framework](https://www.django-rest-framework.org/) - A framework for building web API's
+- [PEP8 Validation](https://pypi.org/project/pep8/) - pep8 is a tool to check your Python code against some of the style conventions in PEP 8.
+- [Github](https://github.com/) - Used to host the repository, store the commit history and manage the project board containing user stories.
+- [Heroku](https://en.wikipedia.org/wiki/Heroku) - A cloud platform that the application is deployed to.
+- [Cloudinary](https://cloudinary.com/) - A service that hosts image files in the project.
+
+### Libraries
+
+The libraries used in this project are located in the requirements.txt file and have been documented below
+
+- [asgiref](https://pypi.org/project/asgiref/) - ASGI is a standard for Python asynchronous web apps and servers to communicate with each other, and positioned as an asynchronous successor to WSGI.
+- [cloudinary](https://pypi.org/project/cloudinary/) - The Cloudinary Python SDK allows you to quickly and easily integrate your application with Cloudinary.
+- [dj-database-url](https://pypi.org/project/dj-database-url/0.5.0/) - This simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+- [dj-rest-auth](https://pypi.org/project/dj-rest-auth/) - Drop-in API endpoints for handling authentication securely in Django Rest Framework.
+- [Django](https://pypi.org/project/Django/) - Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design.
+- [django-allauth](https://pypi.org/project/django-allauth/) - Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
+- [django-cloudinary-storage](https://pypi.org/project/django-cloudinary-storage/) - Django Cloudinary Storage is a Django package that facilitates integration with Cloudinary by implementing Django Storage API.
+- [django-cors-headers](https://pypi.org/project/django-cors-headers/) - A Django App that adds Cross-Origin Resource Sharing (CORS) headers to responses. This allows in-browser requests to your Django application from other origins.
+- [django-filter](https://pypi.org/project/django-filter/) - Django-filter is a reusable Django application allowing users to declaratively add dynamic QuerySet filtering from URL parameters.
+- [django-taggit](https://pypi.org/project/django-taggit/) - Django-taggit a simpler approach to tagging with Django.
+- [django-rest-framework](https://pypi.org/project/djangorestframework/) - web-browsable Web APIs.
+- [djangorestframework-simplejwt](https://pypi.org/project/djangorestframework-simplejwt/) - Simple JWT is a JSON Web Token authentication plugin for the Django REST Framework.
+- [gunicorn](https://pypi.org/project/gunicorn/) - Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX. It’s a pre-fork worker model ported from Ruby’s Unicorn project. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resource usage, and fairly speedy.
+- [oauthlib](https://pypi.org/project/oauthlib/) - OAuthLib is a framework which implements the logic of OAuth1 or OAuth2 without assuming a specific HTTP request object or web framework.
+- [pillow](https://pypi.org/project/Pillow/8.2.0/) - The Python Imaging Library adds image processing capabilities to your Python interpreter.
+- [psycopg2](https://pypi.org/project/psycopg2/) - Psycopg is the most popular PostgreSQL database adapter for the Python programming language.
+- [PyJWT](https://pypi.org/project/PyJWT/) - A Python implementation of RFC 7519.
+- [python3-openid](https://pypi.org/project/python3-openid/) - OpenID support for modern servers and consumers.
+- [pytz](https://pypi.org/project/pytz/) - This is a set of Python packages to support use of the OpenID decentralized identity system in your application, update to Python 3
+- [requests-oauhlib](https://pypi.org/project/requests-oauthlib/) - P rovides first-class OAuth library support for Requests.
+- [sqlparse](https://pypi.org/project/sqlparse/) - sqlparse is a non-validating SQL parser for Python.
+
+## Deployment Frontend
+
+### Deployment to Heroku
+
+Once you have created a new gitpod workspace and set up the new project, you are ready to deploy to Heroku.
+
+1.  In your heroku account, select Create New App, and give it a unique name related to your project.
+2.  Select a region corresponding to where you live and click 'Create App'.
+3.  Head into the 'Deploy' tab select GitHub as the 'deployment method', find your project repository and click 'Connect'.
+4.  Click 'Deploy branch' to trigger Heroku to start building the application.
+5.  Once you see the message saying 'build succeeded' you can click 'Open App' to see your application in the browser.
+
+### Fork this Project Repository
+
+It is possible to make an independent copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and it is also possible to make changes in the copy without affecting the original repository. To fork the repository, follow these steps:
+
+1.  After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
+
+### Clone this Project Repository
+
+A Git clone creates a linked copy of the project that will continue to synchronize with the original repository. In order to create a clone, you can click on the 'Code' button inside the selected repository and then select the 'Clone' option from the dropdown list.
+
+## Deployment Backend
+
+The project was deployed to [Heroku](https://www.heroku.com/). To deploy, please follow the process below:
+
+1.  To begin with we need to create a GitHub repository from the [Code Institute template](https://github.com/Code-Institute-Org/gitpod-full-template) by following the link and then click 'Use this template'.
+2.  Fill in the details for the new repository and then click 'Create Repository From Template'.
+3.  When the repository has been created, click on the 'Gitpod' button to open it in the GitPod Editor.
+4.  Now it's time to install Django and the supporting libraries that are needed, using the following commands:
+
+- `pip3 install 'django<4' gunicorn`
+- `pip3 install 'dj_database_url psycopg2`
+- `pip3 install 'dj3-cloudinary-storage`
+
+5.  When Django and the libraries are installed we need to create a requirements file.
+
+- `pip3 freeze --local > requirements.txt` - This will create and add required libraries to requirements.txt
+
+6.  Now it's time to create the project.
+
+- `django-admin startproject YOUR_PROJECT_NAME .` - This will create the new project.
+
+7.  When the project is created we can now create the applications. My project consists of the following apps; Profiles, Comments, Contact, Events, Followers, Going, Interested and Reviews.
+
+- `python3 manage.py startapp APP_NAME` - This will create an application
+
+8.  We now need to add the applications to settings.py in the INSTALLED_APPS list.
+9.  Now it is time to do our first migration and run the server to test that everything works as expected. This is done by writing the commands below.
+
+- `python3 manage.py makemigrations` - This will prepare the migrations
+- `python3 manage.py migrate` - This will migrate the changes
+- `python3 manage.py runserver` - This runs the server. To test it, click the open browser button that will be visible after the command is run.
+
+9.  Now it is time to create our application on Heroku, attach a database, prepare our environment and settings.py file and setup the Cloudinary storage for our static and media files.
+
+- Once signed into your [Heroku](https://www.heroku.com/) account, click on the button labeled 'New' to create a new app.
+
+10. Choose a unique app name, choose your region and click 'Create app".
+
+11. Next we need to connect an external PostgreSQL database to the app from [ElephantSQL](https://customer.elephantsql.com/login). Once logged into your ElephantSQL dashboard, you click 'Create New Instance' to create a new database. Give the database a:
+
+- Name
+- Tiny Turtle Free Plan
+- Selected data center near you
+
+and click 'Create Instance'. Return to your ElephantSQL Dashboard, and click into your new database instance. Copy the Database URL and head back to Heroku.
+
+12. Back in your Heroku app settings, click on the 'Reveal Config Vars' button. Create a config variable called DATABASE_URL and paste in the URL you copied from ElephantSQL. This connects the database into the app.
+
+13. Go back to GitPod and create a new env.py in the top level directory. Then add these rows.
+
+- `import os` - This imports the os library
+- `os.environ["DATABASE_URL"]` - This sets the environment variables.
+- `os.environ["SECRET_KEY"]` - Here you can choose whatever secret key you want.
+
+14. Back in the Heroku Config Vars settings, create another variable called SECRET_KEY and copy in the same secret key as you added into the env.py file. Don't forget to add this env.py file into the .gitignore file so that it isn't commited to GitHub for other users to find.
+
+15. Now we have to connect to our environment and settings.py file. In the settings.py, add the following code:
+
+`import os`
+
+`import dj_database_url`
+
+`if os.path.isfile("env.py"):`
+
+`import env`
+
+16. In the settings file, remove the insecure secret key and replace it with: `SECRET_KEY = os.environ.get('SECRET_KEY')`
+
+17. Now we need to comment out the old database settings in the settings.py file (this is because we are going to use the postgres database instead of the sqlite3 database).
+
+Instead, we add the link to the DATABASE_URL that we added to the environment file earlier.
+
+18. Save all your fields and migrate the changes again.
+
+`python3 manage.py migrate`
+
+19. Now we can set up [Cloudinary](https://cloudinary.com/users/login?RelayState=%2Fconsole%2Fmedia_library%2Ffolders%2Fhome%3Fconsole_customer_external_id%3Dc-95a4cb26371c4a6bc47e19b0f130a1#gsc.tab=0) (where we will store our static files). First you need to create a Cloudinary account and from the Cloudinary dashboard copy the API Environment Variable.
+
+20. Go back to the env.py file in Gitpod and add the Cloudinary url (it's very important that the url is correct):
+
+`os.environ["CLOUDINARY_URL"] = "cloudinary://************************"`
+
+21. Let's head back to Heroku and add the Cloudinary url in Config Vars. We also need to add a disable collectstatic variable to get our first deployment to Heroku to work.
+
+22. Back in the settings.py file, we now need to add our Cloudinary Libraries we installed earlier to the INSTALLED_APPS list. Here it is important to get the order correct.
+
+- cloudinary_storage
+- django.contrib.staticfiles
+- cloudinary
+
+23. For Django to be able to understand how to use and where to store static files we need to add some extra rows to the settings.py file.
+
+24. To be able to get the application to work through Heroku we also need to add our Heroku app and localhost to the ALLOWED_HOSTS list:
+
+`ALLOWED_HOSTS = ['name.herokuapp.com', 'localhost']`
+
+25. Now we just need to create the basic file directory in Gitpod.
+
+- Create a file called \*_Procfile_ and add the line `web: gunicorn PROJ_NAME.wsgi?` to it.
+
+26. Now you can save all the files and prepare for the first commit and push to Github by writing the lines below.
+
+- `git add .`
+- `git commit -m "Deployment Commit`
+- `git push`
+
+27. Now it's time for deployment. Scroll to the top of the settings page in Heroku and click the 'Deploy' tab. For deployment method, select 'Github'. Search for the repository name you want to deploy and then click connect.
+
+28. Scroll down to the manual deployment section and click 'Deploy Branch'. Hopefully the deployment is successful!
+
+### How To Fork The Repository On GitHub
+
+It is possible to make an independent copy of a GitHub Repository by forking the GitHub account. The copy can then be viewed and it is also possible to make changes in the copy without affecting the original repository. To fork the repository, follow these steps:
+
+1.  After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
+
+### Cloning And Setting Up This Project
+
+To clone and set up this project you need to follow the steps below.
+
+1.  When you are in the repository, find the code tab and click it.
+2.  To the left of the green GitPod button, press the 'code' menu. There you will find a link to the repository. Click on the clipboard icon to copy the URL.
+3.  Use an IDE and open Git Bash. Change directory to the location where you want the cloned directory to be made.
+4.  Type 'git clone', and then paste the URL that you copied from GitHub. Press enter and a local clone will be created.
+5.  To be able to get the project to work you need to install the requirements. This can be done by using the command below:
+
+- `pip3 install -r requirements.txt` - This command downloads and installs all required dependencies that is stated in the requirements file.
+
+6.  The next step is to set up the environment file so that the project knows what variables that needs to be used for it to work. Environment variables are usually hidden due to sensitive information. It's very important that you don't push the env.py file to Github (this can be secured by adding env.py to the .gitignore-file). The variables that are declared in the env.py file needs to be added to the Heroku config vars. Don't forget to do necessary migrations before trying to run the server.
+
+- `python3 manage.py migrate` - This will do the necessary migrations.
+- `python3 manage.py runserver` - If everything i setup correctly the project is now live locally.
+
+## Credits
+
+-   [React Bootstrap documentation:](https://react-bootstrap.netlify.app/)  - Documentation used for styling and to build responsive web pages
+-   [Code Institute:](https://codeinstitute.net/)  Walkthrough modules for the Moments app
+-   [Code Institute Slack Community:](https://app.slack.com/)  Slack community for troubleshooting and FAQ.
+-   [Code Institute Tutor Support:](https://app.slack.com/)  For help and support
+-   [React documentation:](https://legacy.reactjs.org/docs/getting-started.html)  Everything you need to know about React
+-   [Stack Overflow:](https://stackoverflow.com/)  For troubleshooting and FAQ
+-   [W3Schools:](https://www.w3schools.com/)  Online Web Tutorials
+-   I leveraged the [Django Taggit documentation](https://django-taggit.readthedocs.io/en/latest/api.html) while implementing the tag functionality in my events and posts apps.
+-   Additionally, I found helpful insights in this [dev.to](https://dev.to/tikam02/how-to-implement-django-search-field-and-tags-keywords-286a) blog post on effectively using tag fields for keyword search functionality.
+
+## Acknowledgments
+
+-   My mentor at Code Institute, Martina Terlevic, for code review, help and feedback. Very much appreciated!
 
 
 
