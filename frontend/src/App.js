@@ -78,7 +78,10 @@ function App() {
             exact
             path="/events"
             render={() => (
-              <EventsPage message="No results found. Adjust the search keyword." />
+              <EventsPage
+                message="No results found. Adjust the search keyword." 
+                filter={`owner__followed__owner__profile=${profile_id}&`}
+              />
             )}
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
