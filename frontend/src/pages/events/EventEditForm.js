@@ -17,13 +17,13 @@ import { axiosReq } from "../../api/axiosDefaults";
 
 const EVENT_CATEGORIES = [
   ["Climate Rally", "Climate Rally"],
-  ["tree_planting", "Tree Planting"],
-  ["green_workshop", "Green Workshop"],
+  ["Tree Planting", "Tree Planting"],
+  ["Green Workshop", "Green Workshop"],
   ["Sustainability Talk", "Sustainability Talk"],
-  ["eco_fair", "Eco Fair"],
-  ["clean_energy", "Clean Energy"],
-  ["environmental_cleanup", "Environmental Cleanup"],
-  ["other", "Other"],
+  ["Eco Fair", "Eco Fair"],
+  ["Clean Energy", "Clean Energy"],
+  ["Environmental Cleanup", "Environmental Cleanup"],
+  ["Other", "Other"],
 ];
 
 function EventEditForm() {
@@ -118,6 +118,7 @@ function EventEditForm() {
     formData.append("title", title);
     formData.append("description", description);
     formData.append("event_time", event_time);
+    formData.append("event_date", event_date);
     formData.append("city", city);
     formData.append("country", country);
     formData.append("category", category);
