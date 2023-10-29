@@ -161,7 +161,7 @@ const NavBar = () => {
             activeClassName={styles.Active}
             title={
               <span>
-                <i class="fa-solid fa-binoculars"></i>Explore
+                <i className="fa-solid fa-binoculars"></i>Explore
               </span>
             }
             onClick={() => {
