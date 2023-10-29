@@ -295,3 +295,222 @@ As a user, I want to view user avatars (profile pictures) to easily identify oth
 
 - **Retrieve Post Comments:**
     In my capacity as a developer/superuser, I can provide a feature that allows users to access comments linked to a particular post, enhancing the understanding of user interactions.
+
+
+## The Structure Plane
+
+### Project Structure
+
+Cool the Earth exhibits two distinct user experiences contingent upon the user's authentication status. Whether logged in or logged out, these states dictate varying content accessibility and user capabilities.
+
+For logged-out users, the Navigation Bar provides access to the Home, About, Sign In, and Sign Up pages. Upon logging in, the user gains access to additional features within the Feed, encompassing Posts, Events, Liked, Going, Sign Out, and the Profile Page.
+
+The transition to a logged-in state empowers users with the ability to perform actions beyond the scope of logged-out users:
+Logged-in users can create events and posts, modify their profile details, including their username and password, manage their comments, express their preference for posts through likes and unlikes, indicate their interest in events by clicking 'going' or 'un-going,' and expand their network by following or unfollowing other users.
+
+## Features
+
+### Navigation
+
+The navigation bar boasts an elegant and minimalist design, ensuring an exceptional user experience. Its appearance dynamically adapts based on your authentication status. On tablets and mobile devices, the navigation bar transforms into a user-friendly hamburger menu.
+
+When a user is logged out, the following menu items are readily accessible:
+
+- **Cool the Earth Logo:** This logo serves as a constant presence across the site, providing all users with a convenient link back to the homepage.
+- **Home:** Users can navigate to the "Home" section, where a diverse array of posts populates the platform.
+- **About:** This link directs users to the "About" page, where they can gain deeper insights into the platform's mission and purpose.
+- **Authentication:** For quick access, the "Sign In" and "Sign Up" icons are prominently displayed, offering seamless entry into the respective authentication processes.
+
+![NavBar Desktop Logged out](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698580286/Screenshot_2023-10-29_at_12.48.14_okrlr1.png)
+
+![NavBar Mobile Logged out](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698580286/Screenshot_2023-10-29_at_12.50.40_k3vayt.png)
+
+When a user is logged in, a range of additional options becomes accessible:
+
+- **Feed:** Logged-in users have access to a dynamic dropdown menu, allowing them to navigate to the "Feed" page, which includes posts and events. Here, they can explore content from profiles they follow, view events they plan to attend, and revisit posts they've liked.
+
+- **Authentication:** The authentication icons transform as well. Instead of displaying "Sign In" and "Sign Up" options, they now feature a direct link to the user's profile page and a convenient "Sign Out" option to exit the site.
+
+- **Add Event and Add Post:** For users who are logged in, links to create new events and posts are readily accessible.
+
+![NavBar Desktop Logged in](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698580287/Screenshot_2023-10-29_at_12.48.46_axspro.png)
+
+![NavBar Mobile Logged in](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698580287/Screenshot_2023-10-29_at_12.50.22_ldeayr.png)
+
+### Authentication
+
+Users who have not created an account can click on the Sign Up link on the Navigation Bar to create a user account. I have used the standard dj-rest/auth/registration user account signup process for this.
+
+![Sign Up Page](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698582291/Screenshot_2023-10-29_at_13.22.58_wpdyof.png)
+
+If a user has a Cool the Earth user account, they can click on the Sign In menu option in the Navigation Bar to sign into their account.
+
+![Sign in Page](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698582394/Screenshot_2023-10-29_at_13.26.22_jezdee.png)
+
+To sign out, already signed in users can access the Sign Out option in the Navigation Bar.
+
+### Posts Page / Homepage
+
+The Posts Page, which also serves as the website Homepage, consists of three main React components:
+
+1. **Popular Profiles Component**
+2. **Posts**
+3. **Search**
+
+- **Popular Profiles Component**
+
+The Popular Profiles Component is a prominent feature throughout the website. On larger screens, it appears to the right of all pages, while on smaller screens, it occupies the top section. This component utilizes a filter to rank all site users by their follower count, listing the top ten profiles on larger screens and the top four on smaller screens.
+
+![Popular Profiles Logged Out](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698597589/PNG_image_3_ojdngg.jpg)
+
+For users who aren't logged in, the component displays the profile avatar and the username. In contrast, logged-in users have the additional option to follow or unfollow the profile. Clicking on any profile avatar allows the user to view the complete profile page of that individual.
+
+![Profile Details Logged in](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698597259/Screenshot_2023-10-29_at_17.21.56_jiwljg.png)
+
+- **Posts**
+
+The Posts section showcases all posts created by users on the platform. Posts are retrieved from the API, sorted by creation date, with the most recent posts featured at the top in descending order.
+
+![Posts](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698597590/PNG_image_4_n8bl7t.jpg)
+
+Each post includes details about the user who created it, the date of creation, the written content, an image, location, environmental metrics and relevant tags. Users can also view the number of likes and comments on each post. Clicking on the post image or the comments count takes the user to the post's individual page.
+
+- **Search**
+
+To find specific posts, users can utilize the search bar. This feature enables searching by the username of the post creator, the written content within the post, and associated post tags.
+
+![Search](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698597269/Screenshot_2023-10-29_at_17.33.38_x6goiu.png)
+
+### Events Page
+
+The Events Page can be accessed via the 'Discover' dropdown in the Navigation Bar. It shares a similar layout with the Posts Page and utilizes several key components. The Events Page is made up of the following main React components:
+
+1. **Popular Profiles Component**
+2. **Event**
+3. **Search and Filter**
+
+- **Event**: 
+  The Events Page displays all events created by users on the Cool the Earth platform. These events are retrieved from the API and sorted by creation date, with the most recently created events appearing at the top in descending order.
+
+   ![Event](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698598528/PNG_image_5_z9wnix.jpg)
+
+  Each event provides information about the user who created it, the creation date, the event title, description, date, category, image, and tags. Users can also see how many participants have marked their attendance. Clicking on the event image directs users to the event's dedicated page.
+
+- **Search**:
+  Users can easily search for specific events using the search bar. They can search for events based on the username of the creator, the event description, and event tags.
+
+   ![Search](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698598581/Screenshot_2023-10-29_at_17.56.12_otmgll.png)
+
+### Feed
+
+To access the feed pages, simply click on the 'Feed' option in the Navigation Bar. The Posts Feed and Events Feed pages have a familiar layout reminiscent of their respective Posts Page and Events Page counterparts. However, their function diverges in how content is filtered. On the feed pages, they pull all Posts and Events from the API, but the magic happens with the applied filter. This filter ensures that only Posts or Events created by profiles that the logged-in user follows are displayed. Keep in mind that this page is exclusively accessible to logged-in users. In cases where a user isn't following any profiles yet, a 'No Results Found' message will be thoughtfully presented.
+
+![Feed](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698601877/Screenshot_2023-10-29_at_18.51.10_elmxn3.png)
+
+### Going Page
+
+The Going Page maintains the visual harmony of the Events Page while boasting a distinct function. The Event component here is filtered to display only those events that have captured the interest of the logged-in user. To access this exclusive page, select the 'Going' option from the Navigation Bar.
+
+### Create a Post
+
+Logged-in users have the privilege to share their thoughts and experiences with the community by creating new posts. By selecting the 'Add Post' option from the Navigation Bar, users are seamlessly directed to the Create Post form. This user-friendly form demands all essential fields to be filled, and it's worth noting that uploading an image is mandatory for successful submission. After submitting the form, the newly created post is swiftly available on the Posts Page. Users will be automatically redirected to the post's individual page, where they can view their masterpiece. Additionally, for every post created, the user's posts count increases, proudly displayed in their profile page stats for others to see their engagement and contribution.
+
+![Create a Post](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698602887/Screenshot_2023-10-29_at_19.07.14_kyvwdt.png)
+
+### Create an Event
+
+For users who are logged in, the opportunity to host and share exciting events with the community is just a click away. By selecting the 'Add Event' option from the Navigation Bar, users are guided to the Create Event form. Every field in this form is required, and the inclusion of an image is crucial for a successful event submission. Once the form is submitted, users can immediately access the newly created event on the Events Page. A swift redirection takes users to the event's dedicated page, allowing them to view and share it. Furthermore, each event hosted increases the user's events count, which is prominently showcased in their profile page stats, offering insight into their contributions as event hosts.
+
+![Create an Event](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698602890/Screenshot_2023-10-29_at_19.08.04_yttnnh.png)
+
+### Post Page
+
+The Post Page offers a detailed view of an individual post, presenting both post details and comments. Users can access this page by clicking on the post image or comment icon from the Posts Page or Posts Feed. If the user is the post's owner, they gain the ability to edit or delete the post by selecting the three dots next to the post's creation date.
+
+Beneath the post details lies the comments section. In the absence of comments, users encounter a message indicating no comments have been posted. When users are not logged in, they can read published comments but cannot create comments until they log in. Once logged in, a comment form appears above existing comments, allowing users to share their thoughts on the post.
+
+![Post Page](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698603524/Screenshot_2023-10-29_at_19.18.34_erlg9q.png)
+
+Choosing the "Delete" option removes the post from the API, making it invisible on the platform. Users are then redirected to the Post Create form, offering the option to create a new post. Opting for "Edit" redirects users to the Post Edit Form, pre-populated with the existing post's information. Users can modify this information, save the changes, and return to the Post Page, now featuring the updated post.
+
+![Edit Post](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698603591/Screenshot_2023-10-29_at_19.19.44_hfpxav.png)
+
+### Event Page
+
+The Event Page provides a comprehensive display of a specific event's details. Users can navigate to this page by clicking on an event image from the Events Page or Events Feed. If the user is the event's organizer, they have the option to edit or delete the event by selecting the three dots next to the event's creation date.
+
+![Event Page](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698603652/Screenshot_2023-10-29_at_19.20.43_ccw0bo.png)
+
+Opting for "Delete" removes the event from the API, rendering it invisible on the platform. Users are then redirected to the Event Create form, providing the opportunity to create a new event. If "Edit" is selected, users are directed to the Event Edit Form, pre-filled with the existing event's information. Users can make adjustments, save the changes, and view the updated event on the Event Page.
+
+![Edit Event](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698603698/Screenshot_2023-10-29_at_19.21.24_kau4mc.png)
+
+### Comments
+
+On each Post Page, a "Post a Comment" button invites users to engage with that specific post. The comment form includes a single text input field for users to compose their comments. All fields are required, ensuring that comments are not published unless text is provided. Upon publishing a comment, the comment count visibly increments for that post.
+
+![Comment Form](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698603997/Screenshot_2023-10-29_at_19.26.31_njvhot.png)
+
+Comment owners who wish to make modifications to their comments after publishing have the option to edit or delete comments by using the three dots menu located to the right of the published comment.
+
+### Profile Page
+
+The Profile Page provides an in-depth look at a user's identity and activity on Cool the Earth. Users can access Profile Pages by clicking on profile avatars found throughout the site, including popular profiles, post and event authors, and comments. Users can also access their own Profile Page via the authentication icon in the Navigation Bar.
+
+![Profile Page](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698604382/Screenshot_2023-10-29_at_19.32.54_zhudsl.png)
+
+A user's Profile Page displays various information, including:
+
+- Profile picture
+- Username
+- Profile Stats
+- About section
+- Published posts
+- Published events
+
+When a user signs up for Cool the Earth, a basic profile is automatically created with a username, password, and default avatar image. The only information initially generated on the profile page is the user's Profile Stats, which encompass:
+
+- The number of events the user has published
+- The number of posts the user has published
+- The number of profiles the user is following
+- The number of profiles following the user
+
+The user's "About" section remains blank until the user visits their own Profile Page and chooses to edit the profile by adding personal details. Clicking on the "Edit Profile" option leads them to a form where they can update their profile picture and about section. Users have the flexibility to share as much or as little personal information as they prefer.
+
+![Edit Profile](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698604486/Screenshot_2023-10-29_at_19.34.37_iy2dr4.png)
+
+Each profile also includes a "Follow" button, allowing other users to follow or unfollow that profile. The user's published posts and events are listed on their Profile Page, which can be accessed through React-Bootstrap tabs for easy navigation.
+
+### Reusable React Components
+
+1. **Asset**
+    - This versatile component is used throughout the website to load images, display messages, and indicate loading spinners.
+    
+    ![Asset](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698604632/Screenshot_2023-10-29_at_19.37.06_emw5ak.png)
+
+2. **Avatar**
+    - The Avatar component is consistently utilized to display user avatars across different pages of the website.
+
+3. **NavBar**
+    - The NavBar component serves as the primary navigation bar and is consistently present on every page of the website.
+
+4. **Not Found**
+    - The Not Found component is presented to users when they attempt to access an invalid URL.
+
+5. **MoreDropdown**
+    - Reused to enable users to edit and delete various items, such as events, posts and comments.
+
+    ![MoreDropdown](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698604744/Screenshot_2023-10-29_at_19.38.56_oussxc.png)
+    ![MoreDropdown](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698604714/Screenshot_2023-10-29_at_19.38.27_ctvw2m.png)
+
+### Future Features
+
+1. **Real-time User Interactions**
+ - Enjoy real-time chat, notifications, and user-to-user messaging for seamless communication.
+2. **Personalised User Profiles**
+- Customise your profile further, adding new sections and options to make it uniquely yours.
+3. **Mobile App Development**
+- Stay tuned for the mobile app, extending accessibility to your favorite environmental platform.
+
+
+
