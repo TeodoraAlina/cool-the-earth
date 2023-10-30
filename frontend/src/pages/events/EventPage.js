@@ -18,9 +18,8 @@ function EventPage() {
           axiosReq.get(`/events/${id}`),
         ]);
         setEvent({ results: [event] });
-        console.log(event);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
