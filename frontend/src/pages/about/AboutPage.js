@@ -1,14 +1,12 @@
 import styles from "../../styles/AboutPage.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import React, { useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Button,
-  Collapse,
-  Carousel,
-} from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button"
+import Collapse from "react-bootstrap/Collapse";
+import Carousel from "react-bootstrap/Carousel";
 import logo from "../../assets/logov2.png";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Footer from "./Footer";
