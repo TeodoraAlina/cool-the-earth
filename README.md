@@ -2,11 +2,19 @@
 
 ![Responsive Mockup](https://res.cloudinary.com/dxajyjfpw/image/upload/v1698621271/Screenshot_2023-10-30_at_00.14.16_smsgmw.png)
 
-## Project Overview
+### Project Objective
 
-**Cool the Earth** is an innovative social media platform committed to driving positive change for our environment. Our mission is to encourage sustainable living and raise awareness about the urgent need to combat climate change. With a focus on practical solutions and community engagement, we provide users with the tools to make a real impact.
-Cool the Earth offers a social networking experience with a green twist. It’s a space for eco-conscious users to connect, share, and inspire one another. 
-Our platform is more than just a social network; it’s a hub for raising awareness about climate change and sustainable living. Users can access valuable resources and engage in conversations about practical solutions to environmental challenges. Users can create their own profiles, share information about their sustainability journey, and showcase their contributions to a greener world.
+The primary goal of "Cool the Earth" is to create a dedicated web platform catering to digital design professionals. This platform empowers users to actively engage with the digital design community, access event information, connect with industry peers, and participate in content sharing and discussions. Key features of this web application include:
+
+- **Event Management:** Users can explore, create, edit, delete, click going to event listings in their professional domain.
+
+- **Content Interaction:** "Cool the Earth" allows users to not only consume but also contribute by viewing, creating, editing, liking, and commenting on posts.
+
+- **Structured Content Access:** The platform provides a logical content organization, enabling users to navigate posts, apply category-based filters, and conduct keyword and tag searches.
+
+- **User Profiles:** Users can create and personalize their profiles, explore other user profiles, establish connections by following peers, and engage with shared content.
+
+This comprehensive platform fosters connectivity, knowledge sharing, and professional development within the digital design community, promoting the exchange of ideas, experiences, and insights.
 
 View the live project [here](https://cool-the-earth-2122f9015977.herokuapp.com/).
 
@@ -225,7 +233,7 @@ As a user, I want to view user avatars (profile pictures) to easily identify oth
     As a developer/superuser, I can access an extensive list of all events at once, simplifying event management.
 
 - **Access Single Event Details:**
-    In my role as a developer/superuser, I can view in-depth information about a single event, including any associated reviews.
+    In my role as a developer/superuser, I can view in-depth information about a single event.
 
 - **Create New Events:**
     Being a developer/superuser, I have the authority to generate new events, ensuring their inclusion within the events list.

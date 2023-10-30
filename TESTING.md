@@ -381,7 +381,7 @@ Currently, there is a bug causing unexpected glitches within the entire navigati
 
 ### Automated Testing
 
-20 automated tests have been written into the you.i API to test user story scenarios. Automated tests were created to cover the following apps: posts, events, comments, likes, eventgo and profiles. All tests passed.
+20 automated tests have been written into the Cool the Earth API to test user story scenarios. Automated tests were created to cover the following apps: posts, events, comments, likes, eventgo and profiles. All tests passed.
 
 #### Manual Testing
 
