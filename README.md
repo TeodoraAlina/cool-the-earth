@@ -253,8 +253,6 @@ As a user, I want to view user avatars (profile pictures) to easily identify oth
 - **Delete My Comments:**
     In the capacity of a developer/superuser, I can remove comments created by me, effectively eliminating comment data from the API.
 
-### Developer User Stories
-
 **Likes**
 
 - **Create Liked Object:**
